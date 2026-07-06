@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎉 Happy Birthday, Friend! 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #ffe9f1 0%, #fbc4d5 100%);
+      padding: 1.5rem;
+      margin: 0;
+    }
+
+    .card {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255, 248, 250, 0.85);
+      backdrop-filter: blur(3px);
+      border-radius: 48px 48px 48px 48px;
+      box-shadow: 0 30px 50px rgba(190, 80, 120, 0.25), 0 10px 25px rgba(0,0,0,0.08);
+      padding: 2.5rem 2.2rem 3rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(255, 220, 230, 0.5);
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    .header-icon {
+      font-size: 4.2rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      color: #ff7b9c;
+    }
+
+    .header-icon i {
+      filter: drop-shadow(0 6px 10px rgba(255, 100, 130, 0.3));
+    }
+
+    .greeting {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #a63c5e;
+      margin-top: 0.1rem;
+      letter-spacing: 1px;
+      text-shadow: 0 4px 12px rgba(230, 100, 140, 0.2);
+    }
+
+    .sub-greeting {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #b34b6b;
+      background: rgba(255, 225, 235, 0.6);
+      display: inline-block;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.5px;
+      border: 1px solid #ffd9e4;
+    }
+
+    .friend-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: #b23b5e;
+      background: linear-gradient(135deg, #d44a70, #b02b57);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      margin: 0.2rem 0 0.5rem;
+      line-height: 1.2;
+      text-shadow: 0 0 20px rgba(200, 70, 110, 0.2);
+    }
+
+    /* ===== PHOTO STYLES ===== */
+    .profile-photo {
+      margin: 1.2rem auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #ffb3c9;
+      box-shadow: 0 8px 25px rgba(200, 70, 110, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .gallery-item {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid #ffd9e4;
+      box-shadow: 0 4px 12px rgba(200,70,110,0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover {
+      transform: scale(1.1);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .message-box {
+      background: rgba(255, 240, 245, 0.6);
+      backdrop-filter: blur(2px);
+      padding: 1.8rem 1.8rem;
+      border-radius: 40px;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid #ffdae6;
+      box-shadow: inset 0 2px 6px rgba(255, 200, 215, 0.4);
+    }
+
+    .message-box p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #3f2a32;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    .message-box i {
+      color: #d45a7a;
+      margin: 0 4px;
+    }
+
+    .heart-line {
+      font-size: 1.5rem;
+      color: #d65276;
+      margin: 0.5rem 0 0.2rem;
+      letter-spacing: 6px;
+    }
+
+    .wish-highlight {
+      font-weight: 600;
+      color: #a63255;
+      background: linear-gradient(to right, #ffb3c6, #ffc1d2);
+      padding: 0.1rem 0.8rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .emoji-big {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .birthday-cake {
+      font-size: 4.5rem;
+      line-height: 1;
+      margin: 0.4rem 0 0.2rem;
+      filter: drop-shadow(0 8px 12px rgba(200, 80, 110, 0.3));
+    }
+
+    .footer-message {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin-top: 1.8rem;
+      border-top: 2px dashed #fbc4d5;
+      padding-top: 1.8rem;
+    }
+
+    .footer-message span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #89415a;
+      background: rgba(255, 220, 235, 0.6);
+      padding: 0.4rem 1.4rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+      border: 1px solid #ffc8db;
+    }
+
+    .footer-message i {
+      color: #d65a7c;
+      font-size: 1.3rem;
+    }
+
+    .btn {
+      background: #ff8aa8;
+      border: none;
+      padding: 0.7rem 2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #2f1a22;
+      box-shadow: 0 8px 18px rgba(200, 70, 110, 0.25);
+      transition: 0.2s ease;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      background: rgba(255, 150, 180, 0.7);
+      border: 1px solid #ffb3c9;
+      letter-spacing: 0.3px;
+      margin-top: 0.3rem;
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      background: #ff7b9e;
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(190, 70, 110, 0.3);
+      color: #1f0f16;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 2rem 1.2rem 2.2rem;
+        border-radius: 32px;
+      }
+      .greeting {
+        font-size: 2.6rem;
+      }
+      .friend-name {
+        font-size: 3rem;
+      }
+      .sub-greeting {
+        font-size: 1.2rem;
+        padding: 0.2rem 1.2rem;
+      }
+      .message-box p {
+        font-size: 1rem;
+      }
+      .header-icon {
+        font-size: 3rem;
+        gap: 0.4rem;
+      }
+      .birthday-cake {
+        font-size: 3.8rem;
+      }
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+      .gallery-item {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .sparkle {
+      display: inline-block;
+      animation: twinkle 2s infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.5; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.1); }
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.7s; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="header-icon">
+      <i class="fas fa-birthday-cake sparkle"></i>
+      <i class="fas fa-balloon sparkle delay-1" style="color:#ff7b9c;"></i>
+      <i class="fas fa-balloon sparkle delay-2" style="color:#b96a8a;"></i>
+      <i class="fas fa-star sparkle" style="color:#f5b0c0;"></i>
+    </div>
+
+    <div class="greeting">
+      Happy Birthday!
+    </div>
+
+    <!-- ===== CHANGE "Sara" TO YOUR FRIEND'S NAME ===== -->
+    <div class="friend-name">
+      ❀ Aiman ❀
+    </div>
+
+    <!-- ===== PHOTO SECTION ===== -->
+    <!-- Replace "your-photo-url.jpg" with actual image link -->
+    <div class="profile-photo">
+      <img src="img4.jpeg" alt="Birthday Girl">
+    </div>
+
+    <div class="sub-greeting">
+      <i class="fas fa-crown" style="color: #d45a7a; margin-right: 8px;"></i> 
+      For a wonderful friend 
+      <i class="fas fa-crown" style="color: #d45a7a; margin-left: 8px;"></i>
+    </div>
+
+    <!-- ===== GALLERY SECTION (Optional - add more photos) ===== -->
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="img 1.jpeg" alt="Memory 1">
+      </div>
+      <div class="gallery-item">
+        <img src="img2.jpeg" alt="Memory 2">
+      </div>
+      <div class="gallery-item">
+        <img src="img3.jpeg" alt="Memory 3">
+      </div>
+    </div>
+
+    <div class="message-box">
+      <p>
+        <i class="fas fa-quote-left" style="font-size: 1.2rem; opacity: 0.7;"></i>
+        <span style="font-weight: 500; color: #8f3f58;">Today the world is brighter</span> 
+        because <span class="wish-highlight">you</span> were born. 
+        <i class="fas fa-quote-right" style="font-size: 1.2rem; opacity: 0.7;"></i>
+      </p>
+      <div class="heart-line">
+        <i class="fas fa-heart" style="color: #e8547a;"></i>
+        <i class="fas fa-heart" style="color: #d94a70;"></i>
+        <i class="fas fa-heart" style="color: #c73e64;"></i>
+      </div>
+      <p style="font-size: 1.1rem; margin-top: 0.6rem;">
+        <i class="fas fa-gem" style="color: #b85273;"></i> 
+        You are <strong>kind, radiant, and one of a kind</strong>. 
+        May your day be filled with laughter, love, and all the 
+        <i class="fas fa-cake-candles" style="color: #d45a7a;"></i> sweetness 
+        you deserve.
+      </p>
+      <div class="emoji-big">
+        🌸✨🎁
+      </div>
+    </div>
+
+    <div class="birthday-cake">
+      🎂🎉 
+      <span style="font-size: 2.8rem; vertical-align: middle;">💖</span> 
+      🎉🎂
+    </div>
+
+    <div class="footer-message">
+      <span>
+        <i class="fas fa-hands-praying" style="margin-right: 6px;"></i> 
+        Always here for you 
+        <i class="fas fa-hand-holding-heart" style="margin-left: 6px;"></i>
+      </span>
+      <span>
+        <i class="fas fa-calendar-day"></i>  ~ 08.07.2026
+      </span>
+    </div>
+
+    <button class="btn" id="wishBtn">
+      <i class="fas fa-gift"></i> Send extra love
+    </button>
+    <div style="margin-top: 1rem; font-size: 0.9rem; color: #945470; opacity: 0.7;">
+      <i class="fas fa-heart" style="color: #d45a7a;"></i> 
+      from your friend 
+      <i class="fas fa-heart" style="color: #d45a7a;"></i>
+    </div>
+
+    <div style="margin-top: 1.2rem; font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #994a68; opacity: 0.9;">
+      ~ with love ~
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('wishBtn');
+      const card = document.querySelector('.card');
+
+      const messages = [
+        '🌸 Sending you a thousand roses!',
+        '💖 You are absolutely amazing!',
+        '✨ May your dreams sparkle today!',
+        '🎂 Another year, more fabulous you!',
+        '🌺 Keep shining, beautiful soul!',
+        '💫 Wishing you endless joy!',
+        '🌟 You deserve the whole universe!'
+      ];
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const emoji = ['🌸', '💖', '✨', '🎂', '🌺', '💫', '🌟', '❤️', '🎈'];
+        for (let i = 0; i < 8; i++) {
+          const span = document.createElement('span');
+          span.textContent = emoji[Math.floor(Math.random() * emoji.length)];
+          span.style.position = 'fixed';
+          span.style.left = (20 + Math.random() * 60) + '%';
+          span.style.top = (20 + Math.random() * 40) + '%';
+          span.style.fontSize = (1.8 + Math.random() * 2.5) + 'rem';
+          span.style.pointerEvents = 'none';
+          span.style.zIndex = '999';
+          span.style.opacity = '0.9';
+          span.style.transition = 'transform 1.8s ease-out, opacity 1.8s ease-out';
+          span.style.transform = 'scale(0.5) rotate(10deg)';
+          document.body.appendChild(span);
+
+          requestAnimationFrame(() => {
+            span.style.transform = 'scale(1.8) rotate(20deg) translateY(-80px)';
+            span.style.opacity = '0';
+          });
+
+          setTimeout(() => {
+            span.remove();
+          }, 2000);
+        }
+
+        const originalText = btn.innerHTML;
+        const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+        btn.innerHTML = `<i class="fas fa-heart" style="color: #d43f6b;"></i> ${randomMsg}`;
+        btn.style.background = '#ffb3cc';
+        btn.style.color = '#411f2b';
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2500);
+
+        card.style.transition = 'transform 0.15s ease';
+        card.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+          card.style.transform = 'scale(1)';
+        }, 200);
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
